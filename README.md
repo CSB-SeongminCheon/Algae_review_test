@@ -1,6 +1,6 @@
 # Algae revire - phylotranscritpomic analysis pipeline
 
-```python
+```bash
 for i in range(0, 1):
   print("test")
 ```
