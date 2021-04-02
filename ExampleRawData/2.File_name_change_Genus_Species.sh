@@ -1,0 +1,53 @@
+# File name changer for SRX data & species name
+
+mv	SRR10426049_1.fastq	Alexandrium_affine_SRR10426049_1.fastq
+mv	ERR1558595_1.fastq	Alexandrium_minutum_ERR1558595_1.fastq
+mv	SRR10426048_1.fastq	Alexandrium_pacificum_SRR10426048_1.fastq
+mv	SRR1610335_1.fastq	Amphidinium_carterae_SRR1610335_1.fastq
+mv	SRR1300537_1.fastq	Brandtodinium_nutricula_SRR1300537_1.fastq
+mv	SRR5277468_1.fastq	Crypthecodinium_cohnii_SRR5277468_1.fastq
+mv	SRR1296839_1.fastq	Durinskia_baltica_SRR1296839_1.fastq
+mv	SRR1300518_1.fastq	Gonyaulax_spinifera_SRR1300518_1.fastq
+mv	SRR1296705_1.fastq	Gymnodinium_catenatum_SRR1296705_1.fastq
+mv	SRR1300520_1.fastq	Heterocapsa_arctica_SRR1300520_1.fastq
+mv	SRR1296810_1.fastq	Heterocapsa_rotundata_SRR1296810_1.fastq
+mv	SRR1296978_1.fastq	Heterocapsa_triquetra_SRR1296978_1.fastq
+mv	SRR1296840_1.fastq	Kryptoperidinium_foliaceum_SRR1296840_1.fastq
+cat	SRR330443_1.fastq	>>	Lingulodinium_polyedrum_SRX090641_1.fastq
+cat	SRR330444_1.fastq	>>	Lingulodinium_polyedrum_SRX090641_1.fastq
+cat	SRR330445_1.fastq	>>	Lingulodinium_polyedrum_SRX090641_1.fastq
+cat	SRR330446_1.fastq	>>	Lingulodinium_polyedrum_SRX090641_1.fastq
+mv	SRR1296929_1.fastq	Noctiluca_scintillans_SRR1296929_1.fastq
+mv	SRR1296901_1.fastq	Oxyrrhis_marina_SRR1296901_1.fastq
+mv	SRR401178_1.fastq	Polarella_glacialis_SRR401178_1.fastq
+mv	SRR1296738_1.fastq	Protoceratium_reticulatum_SRR1296738_1.fastq
+cat	SRR2032367_1.fastq	>>	Scrippsiella_trochoidea_SRX1032815.fastq
+cat	SRR2040850_1.fastq	>>	Scrippsiella_trochoidea_SRX1032815.fastq
+cat	SRR2040852_1.fastq	>>	Scrippsiella_trochoidea_SRX1032815.fastq
+mv	DRR003869_1.fastq	Symbiodinium_minutum_Mf105b01_DRR003869_1.fastq
+mv	SRR1154655_1.fastq	Perkinsus_marinus_SRR1154655_outgroup_1.fastq
+		
+mv	SRR10426049_2.fastq	Alexandrium_affine_SRR10426049_2.fastq
+mv	ERR1558595_2.fastq	Alexandrium_minutum_ERR1558595_2.fastq
+mv	SRR10426048_2.fastq	Alexandrium_pacificum_SRR10426048_2.fastq
+mv	SRR1610335_2.fastq	Amphidinium_carterae_SRR1610335_2.fastq
+mv	SRR1300537_2.fastq	Brandtodinium_nutricula_SRR1300537_2.fastq
+mv	SRR5277468_2.fastq	Crypthecodinium_cohnii_SRR5277468_2.fastq
+mv	SRR1296839_2.fastq	Durinskia_baltica_SRR1296839_2.fastq
+mv	SRR1300518_2.fastq	Gonyaulax_spinifera_SRR1300518_2.fastq
+mv	SRR1296705_2.fastq	Gymnodinium_catenatum_SRR1296705_2.fastq
+mv	SRR1300520_2.fastq	Heterocapsa_arctica_SRR1300520_2.fastq
+mv	SRR1296810_2.fastq	Heterocapsa_rotundata_SRR1296810_2.fastq
+mv	SRR1296978_2.fastq	Heterocapsa_triquetra_SRR1296978_2.fastq
+mv	SRR1296840_2.fastq	Kryptoperidinium_foliaceum_SRR1296840_2.fastq
+cat	SRR330443_2.fastq	>>	Lingulodinium_polyedrum_SRX090641_2.fastq
+cat	SRR330444_2.fastq	>>	Lingulodinium_polyedrum_SRX090641_2.fastq
+cat	SRR330445_2.fastq	>>	Lingulodinium_polyedrum_SRX090641_2.fastq
+cat	SRR330446_2.fastq	>>	Lingulodinium_polyedrum_SRX090641_2.fastq
+mv	SRR1296929_2.fastq	Noctiluca_scintillans_SRR1296929_2.fastq
+mv	SRR1296901_2.fastq	Oxyrrhis_marina_SRR1296901_2.fastq
+mv	SRR401178_2.fastq	Polarella_glacialis_SRR401178_2.fastq
+mv	SRR1296738_2.fastq	Protoceratium_reticulatum_SRR1296738_2.fastq
+mv	DRR003869_2.fastq	Symbiodinium_minutum_Mf105b01_DRR003869_2.fastq
+mv	SRR1154655_2.fastq	Perkinsus_marinus_SRR1154655_outgroup_2.fastq
+rm SRR*fastq
