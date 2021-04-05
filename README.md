@@ -1,4 +1,4 @@
-# Algae revire - phylotranscritpomic analysis pipeline
+# Algae review - phylotranscritpomic analysis pipeline
 
 ```bash
 for i in range(0, 1):
