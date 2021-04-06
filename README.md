@@ -2,7 +2,7 @@
 
 Citation: Cheon, S., Zhang, J. and Park, C., 2020. Is phylotranscriptomics as reliable as phylogenomics?. Molecular biology and evolution, 37(12), pp.3672-3683.  
   
-\##Notice: Consistent text formatting helps reders to interpret information. <text> means parameters for Linux shell and python scripts such as input file name or integer values.
+\##Notice: Consistent text formatting helps reders to interpret information. \<text\> means parameters for Linux shell and python scripts such as input file name or integer values.
   
 - - -
 
