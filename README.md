@@ -1,5 +1,11 @@
 # Algae review - phylotranscritpomic analysis pipeline
 
+Citation: Cheon, S., Zhang, J. and Park, C., 2020. Is phylotranscriptomics as reliable as phylogenomics?. Molecular biology and evolution, 37(12), pp.3672-3683.  
+  
+\##Notice: Consistent text formatting helps reders to interpret information. <text> means parameters for Linux shell and python scripts such as input file name or integer values.
+  
+- - -
+
 ```bash
 for i in range(0, 1):
   print("test")
@@ -35,4 +41,14 @@ cmake
 [Phyutility](https://github.com/blackrim/phyutility) (v.2.7.1)  
 [IQ-Tree](http://www.iqtree.org) (v. 1.6.11 or higher)  
   
-### Tutorial
+- - -
+## Tutorial
+
+\##Notice: if you have a proteome sequence or translated de novo assembled reference transcrits. you can starts from part 2. 
+
+### Part 1. RNA-seq raw data download from NCBI SRA database
+for phylogeny with RNA-seq data. we are download RNA-seq raw data from NCBI SRA database.
+``` bash
+fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRAaccessionID>
+```
+
