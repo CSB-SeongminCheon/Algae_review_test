@@ -17,7 +17,7 @@ Internet accessible environments
   
 **Software**  
   
-Python2.7 with Biopython  
+Python2.7 with [Biopython](https://biopython.org)  
 JAVA 1.8 (or higher)  
 cmake  
 [SRA Toolkit](https://www.ncbi.nlm.nih.gov/home/download/) (v 2.10.8 or higher)  
