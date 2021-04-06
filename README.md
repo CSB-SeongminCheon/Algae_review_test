@@ -52,14 +52,14 @@ for phylogeny with RNA-seq data. we are download RNA-seq raw data from NCBI SRA 
 fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRA Accession ID>
 ```
   
-  
+#
   
 ### part 2. de novo transcritpome assembly and translation
-
+    
 1. *De novo* transcriptome assembly with Trinity
 Short reads RNA sequencing data processed by Trinity assembler with Trimmomatic read trimming toool for illumina NGS data.  
 For data sets with known adaptor sequence and phred scores for base quality.  
-
+  
 if you have single-end sequencing data  
 ``` bash
 Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36" --max_memory 200G --CPU 32 --full_cleanup --output taxonID.trinity --single <single-end reads.fastq> --output <trinity_output_Name>
@@ -67,9 +67,9 @@ Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home
 or paired-end sequencing data  
 ``` bash
 Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36" --max_memory 200G --CPU 32 --full_cleanup --output taxonID.trinity --left <forward reads.fastq> --right <reverse reads.fastq> --output <trinity_output_Name>
-```
-  
-  
+```  
+   
+#
   
 2. Find Open Reading Frames and translate using TransDecoder with blastp for orfs selection  
   
@@ -86,7 +86,24 @@ TransDecoder.LongOrfs -t <transcripts> -S
 blastp -query <transcripts>.transdecoder_dir/longest_orfs.pep -db uniprot_sprot.fasta -max_target_seqs 1 -outfmt 6 -evalue 10 -num_threads 32 -out Genus_Species.outfmt6
 TransDecoder.Predict -t <transcripts> --retain_blastp_hits Genus_Species.outfmt6 --cpu 32
 ```
+  
+  
+3. Clustering with CD-hit  
+  
+Reduce translated sequence redundancy with CD-hit  
+``` bash
+cdhit -i <transcripts>.transdecoder.pep -o <Genus Species>.fa.cdhit -c 0.99 -n 5 -T 32
+```
 
+4. Sequence ID fixation.
+  
+CD-hit output file " Genus_Species.fa.cdhit" sequence ID change to shorten name to Genus_Species@seqID. The special character "@" is used to separate taxon name and sequence ID. Any "-" (hyphen) in the sequence name will be replaces py phyutility and cause problems in downstream process.
+``` bash
+python2 fix_names_from_CDhit.py <CDhit output file.cdhit> <Genus name> <Species name>
+```
 
-
+### part 3. Orthology inference and single copy orthologous extraction  
+  
+Orthology inference, Copy all the Genus_Species.fix.fa files (or any proteom sequences) into a new directory such as <OrthoFinder_running_dir>
+  
 
