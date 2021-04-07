@@ -58,7 +58,7 @@ fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRA Accession ID>
 ### part 2. de novo transcritpome assembly and translation  
     
     
-__1. *De novo* transcriptome assembly with Trinity__
+__1. *De novo* transcriptome assembly with Trinity__  
 Short reads RNA sequencing data processed by Trinity assembler with Trimmomatic read trimming toool for illumina NGS data.  
   
 For data sets with known adaptor sequence and phred scores for base quality.  
