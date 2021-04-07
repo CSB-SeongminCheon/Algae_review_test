@@ -58,7 +58,7 @@ fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRA Accession ID>
 ### part 2. de novo transcritpome assembly and translation  
     
     
-1. *De novo* transcriptome assembly with Trinity
+__1. *De novo* transcriptome assembly with Trinity__
 Short reads RNA sequencing data processed by Trinity assembler with Trimmomatic read trimming toool for illumina NGS data.  
   
 For data sets with known adaptor sequence and phred scores for base quality.  
@@ -76,7 +76,7 @@ Trinity --seqType fq --trimmomatic --quality_trimming_params <"ILLUMINACLIP:/hom
 
 <br>  
   
-2. Find Open Reading Frames and translate using TransDecoder with blastp for orfs selection  
+**2. Find Open Reading Frames and translate using TransDecoder with blastp for orfs selection**  
   
 Assembled transcripts were translated with TransDecoder programs and choosing orfs with blastp results.  
 For blastp, download and make database file from [Uniprot/Swiss-Prot](https://www.uniprot.org/downloads)
@@ -93,7 +93,7 @@ TransDecoder.Predict -t <transcripts> --retain_blastp_hits Genus_Species.outfmt6
 ```
 <br>  
   
-3. Clustering with CD-hit  
+**3. Clustering with CD-hit**  
   
 Reduce translated sequence redundancy with CD-hit  
 ``` bash
@@ -101,7 +101,7 @@ cdhit -i <transcripts>.transdecoder.pep -o <Genus Species>.fa.cdhit -c 0.99 -n 5
 ```  
 <br>  
 
-4. Sequence ID fixation.
+**4. Sequence ID fixation.**  
   
 CD-hit output file " Genus_Species.fa.cdhit" sequence ID change to shorten name to Genus_Species@seqID. The special character "@" is used to separate taxon name and sequence ID. Any "-" (hyphen) in the sequence name will be replaces py phyutility and cause problems in downstream process.
 ``` bash
@@ -112,7 +112,7 @@ python2 fix_names_from_CDhit.py <CDhit output file.cdhit> <Genus name> <Species 
 
 ### part 3. Orthology inference and single copy orthologous extraction  
   
-1. Running OrthoFinder  
+**1. Running OrthoFinder**  
 
 Orthology inference, Copy all the Genus_Species.fix.fa files (or any proteom sequences) into a new directory such as <OrthoFinder_running_dir>.
 ```bash
@@ -120,7 +120,7 @@ orthofinder -f <OrthoFinder_running_dir>
 ```
 <br>  
 
-2. Single copy orthologous prediction  
+**2. Single copy orthologous prediction**  
   
 Choose the minimal number of taxa filters for single copy orthologs inference (recommend half of taxa)
 ```bash
@@ -128,14 +128,14 @@ python singlecopy_from_OrthoFinder.py <OrthoFinder_running_dir> SingleCopy <Min 
 ```  
 <br>  
 
-3. Multiple sequence alignment with Prank
+**3. Multiple sequence alignment with Prank**   
 ```bash
 python prank_Wrapper.py SingleCopy
 ```
 
 <br>  
 
-4. Alignment trimming with Phyutility  
+**4. Alignment trimming with Phyutility**  
   
 I usually use 0.3 for minimal aling column.
 ```bash
@@ -144,7 +144,7 @@ python phyutility_Wrapper.py <single copy results> <min_align_column>
 
 <br>  
    
-5. Concatenate supermatrix  
+**5. Concatenate supermatrix**  
 
 You can choose minimal cleaned alignment length per orthologs and minimal number of taxa filters (recommand 150, half of taxa for amino acid tree).  
 Concatenate with selected cleand orthologous for supermatrix.  
