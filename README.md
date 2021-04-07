@@ -2,13 +2,14 @@
 
 Citation: Cheon, S., Zhang, J. and Park, C., 2020. Is phylotranscriptomics as reliable as phylogenomics?. Molecular biology and evolution, 37(12), pp.3672-3683.  
   
-\##Notice: Consistent text formatting helps reders to interpret information. \<text\> means parameters for Linux shell and python scripts such as input file name or integer values.
+\##Notice: Consistent text formatting helps reders to interpret information. **\<text\>** means parameters for Linux shell and python scripts such as input file name or integer values.
 
 - - -
+<br>  
+
 ## Requirement
 
 **Hardware**  
-
 32-core processors (recommend > 8-core processors)  
 256 Gb (Gigabytes) of RAM (recommend > 120 Gb of RAM)  
 \> 1 Terabytes of space require for raw sequencing data and processed data  
@@ -16,7 +17,6 @@ Ubuntu 16.04 LTS (recommend LTS version)
 Internet accessible environments  
   
 **Software**  
-  
 Python2.7 with [Biopython](https://biopython.org)  
 JAVA 1.8 (or higher)  
 cmake  
@@ -40,6 +40,7 @@ cmake
   1.[Quick start guideline from Raw data with examples](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick_Start_Guideline_from_RawData.md)  
   2.[Quick start guideline from translated de novo assembled transcripts]()  
   
+ <br>  
    
 ## Tutorial
   
@@ -51,9 +52,10 @@ for phylogeny with RNA-seq data. we are download RNA-seq raw data from NCBI SRA 
 ``` bash
 fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRA Accession ID>
 ```
-  
-#
-  
+
+<br>
+<br>  
+
 ### part 2. de novo transcritpome assembly and translation
     
 1. *De novo* transcriptome assembly with Trinity
