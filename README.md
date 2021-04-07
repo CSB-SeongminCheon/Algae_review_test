@@ -139,7 +139,7 @@ python2 prank_Wrapper.py SingleCopy
   
 I usually use 0.3 for minimal aling column.
 ```bash
-python phyutility_Wrapper.py <single copy results> <min_align_column>
+python2 phyutility_Wrapper.py <single copy results> <min_align_column>
 ```
 
 <br>  
