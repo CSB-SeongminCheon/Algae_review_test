@@ -49,7 +49,7 @@ cmake
   
 ### Part 1. RNA-seq raw data download from NCBI SRA database
 For phylogeny with RNA-seq data. we are download RNA-seq raw data from NCBI SRA database.
-``` bash
+``` 
 fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRA Accession ID>
 ```
 
