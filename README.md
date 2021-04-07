@@ -37,8 +37,8 @@ cmake
   
 - - -
 ## Quick start.
-  1.[Quick start guideline from Raw data with examples](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick_Start_Guideline_from_RawData.md)  
-  2.[Quick start guideline from translated de novo assembled transcripts]()  
+  1.[Quick start guideline for example raw data download](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick_Start_Guideline_from_RawData.md)  
+  2.[Quick start guideline from translated de novo assembled transcripts with example dataset]()  
   
  <br>  
    
@@ -65,13 +65,13 @@ For data sets with known adaptor sequence and phred scores for base quality.
   
 If you have single-end sequencing data  
 ``` bash
-Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36" --max_memory 200G --CPU 32 --full_cleanup --output taxonID.trinity --single <single-end reads.fastq> --output <trinity_output_Name>
+Trinity --seqType fq --trimmomatic --quality_trimming_params <"ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa>:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36"> --max_memory <200G> --CPU <32> --full_cleanup --single <single-end reads.fastq> --output <trinity_output_Name>
 ```
 <br>  
 
 or paired-end sequencing data  
 ``` bash
-Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36" --max_memory 200G --CPU 32 --full_cleanup --output taxonID.trinity --left <forward reads.fastq> --right <reverse reads.fastq> --output <trinity_output_Name>
+Trinity --seqType fq --trimmomatic --quality_trimming_params <"ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa>:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36"> --max_memory 200G --CPU 32 --full_cleanup --left <forward reads.fastq> --right <reverse reads.fastq> --output <trinity_output_Name>
 ```  
 
 <br>  
@@ -112,6 +112,59 @@ python2 fix_names_from_CDhit.py <CDhit output file.cdhit> <Genus name> <Species 
 
 ### part 3. Orthology inference and single copy orthologous extraction  
   
-Orthology inference, Copy all the Genus_Species.fix.fa files (or any proteom sequences) into a new directory such as <OrthoFinder_running_dir>
+1. Running OrthoFinder  
+
+Orthology inference, Copy all the Genus_Species.fix.fa files (or any proteom sequences) into a new directory such as <OrthoFinder_running_dir>.
+```bash
+orthofinder -f <OrthoFinder_running_dir>
+```
+<br>  
+
+2. Single copy orthologous prediction  
   
+Choose the minimal number of taxa filters for single copy orthologs inference (recommend half of taxa)
+```bash
+python singlecopy_from_OrthoFinder.py <OrthoFinder_running_dir> SingleCopy <Min number of taxa>
+```  
+<br>  
+
+3. Multiple sequence alignment with Prank
+```bash
+python prank_Wrapper.py SingleCopy
+```
+
+<br>  
+
+4. Alignment trimming with Phyutility  
+  
+I usually use 0.3 for minimal aling column.
+```bash
+python phyutility_Wrapper.py <single copy results> <min_align_column>
+```
+
+<br>  
+   
+5. Concatenate supermatrix  
+
+You can choose minimal cleaned alignment length per orthologs and minimal number of taxa filters (recommand 150, half of taxa for amino acid tree).  
+Concatenate with selected cleand orthologous for supermatrix.  
+
+```bash
+python supermatrix_concatenate.py <single copy results> <min_align_length> <min_taxa> <output_name>
+```
+
+<br>
+
+### part 4. Phylotranscritpomic tree reconstruction  
+  
+Run IQ-Tree with 1000 UFBoot replications and search for best fit tree. Use LG+C60+R+F model.
+```bash
+iqtree -s <Concatenate_matrix>.phy -spp <Concatenate_matrix>.model -m LG+C60+R+F -bb 1000 -nt 32
+```
+
+
+
+
+
+
 
