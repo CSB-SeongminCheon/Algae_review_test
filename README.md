@@ -124,13 +124,13 @@ orthofinder -f <OrthoFinder_running_dir>
   
 Choose the minimal number of taxa filters for single copy orthologs inference (recommend half of taxa)
 ```bash
-python singlecopy_from_OrthoFinder.py <OrthoFinder_running_dir> SingleCopy <Min number of taxa>
+python2 singlecopy_from_OrthoFinder.py <OrthoFinder_running_dir> SingleCopy <Min number of taxa>
 ```  
 <br>  
 
 **3. Multiple sequence alignment with Prank**   
 ```bash
-python prank_Wrapper.py SingleCopy
+python2 prank_Wrapper.py SingleCopy
 ```
 
 <br>  
@@ -150,7 +150,7 @@ You can choose minimal cleaned alignment length per orthologs and minimal number
 Concatenate with selected cleand orthologous for supermatrix.  
 
 ```bash
-python supermatrix_concatenate.py <single copy results> <min_align_length> <min_taxa> <output_name>
+python2 supermatrix_concatenate.py <single copy results> <min_align_length> <min_taxa> <output_name>
 ```
 
 <br>
