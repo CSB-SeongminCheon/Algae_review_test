@@ -53,25 +53,28 @@ for phylogeny with RNA-seq data. we are download RNA-seq raw data from NCBI SRA 
 fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files <SRA Accession ID>
 ```
 
-<br>
 <br>  
 
-### part 2. de novo transcritpome assembly and translation
+### part 2. de novo transcritpome assembly and translation  
+    
     
 1. *De novo* transcriptome assembly with Trinity
 Short reads RNA sequencing data processed by Trinity assembler with Trimmomatic read trimming toool for illumina NGS data.  
+  
 For data sets with known adaptor sequence and phred scores for base quality.  
   
 if you have single-end sequencing data  
 ``` bash
 Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36" --max_memory 200G --CPU 32 --full_cleanup --output taxonID.trinity --single <single-end reads.fastq> --output <trinity_output_Name>
 ```
+<br>  
+
 or paired-end sequencing data  
 ``` bash
 Trinity --seqType fq --trimmomatic --quality_trimming_params "ILLUMINACLIP:/home/your/path/trinity-plugins/Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36" --max_memory 200G --CPU 32 --full_cleanup --output taxonID.trinity --left <forward reads.fastq> --right <reverse reads.fastq> --output <trinity_output_Name>
 ```  
-   
-#
+
+<br>  
   
 2. Find Open Reading Frames and translate using TransDecoder with blastp for orfs selection  
   
