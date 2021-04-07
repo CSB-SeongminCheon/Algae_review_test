@@ -13,7 +13,7 @@ if __name__ == "__main__":
 	fixed = open(genus +"_"+species+".fix.fa", "w")
 	index = 1
 	for cdhit in seq.parse(f, "fasta"):
-		fixed.write(">"+genus+"_"+species+"@"+str(index)+'\n'+str(cdhit.seq)+'\n')
+		fixed.write(">"+genus+"_"+species+"@"+str(index)+'\n'+str(cdhit.seq).rstrip("*")+'\n')
 		index +=1	
 
 	fixed.close()
