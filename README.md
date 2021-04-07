@@ -37,8 +37,8 @@ cmake
   
 - - -
 ## Quick start.
-  1.[Quick start guideline for example raw data download](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick_Start_Guideline_from_RawData.md)  
-  2.[Quick start guideline from translated de novo assembled transcripts with example dataset]()  
+  1.[Quick start guideline for example raw data download](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick%20start%20guideline%20for%20example%20raw%20data%20download)  
+  2.[Quick start guideline from translated de novo assembled transcripts with example dataset](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick%20start%20guideline%20from%20translated%20de%20novo%20assembled%20transcripts%20with%20example%20dataset)  
   
  <br>  
    
