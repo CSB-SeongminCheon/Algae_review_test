@@ -22,7 +22,7 @@ JAVA 1.8 (or higher)
 cmake  
 [SRA Toolkit](https://www.ncbi.nlm.nih.gov/home/download/) (v 2.10.8 or higher)  
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) (v 0.36 or higher) 
-[Samtools](http://www.htslib.org)
+[Samtools](http://www.htslib.org)  
 [Trinity](https://github.com/trinityrnaseq/trinityrnaseq) (v 2.2.0 or higher)  
 [Jellyfish](https://github.com/gmarcais/Jellyfish) (v 2.3.0 or higher)  
 [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) (v 2.3.5.1 or higher)  
