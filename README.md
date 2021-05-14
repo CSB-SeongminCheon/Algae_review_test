@@ -36,6 +36,39 @@ cmake
 [Phyutility](https://github.com/blackrim/phyutility) (v.2.7.1)  
 [IQ-Tree](http://www.iqtree.org) (v. 1.6.11 or higher)  
   
+  
+## Installation on Linux with conda
+1. Install [anaconda](https://www.anaconda.com/products/individual)
+``` bash
+wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh  
+
+sh https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh  
+  
+rm https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+```
+  
+2. Create conda environmental and installation
+``` bash
+conda update conda
+
+conda env create -n phylo --file 2021.May.Phylo_env.yaml
+
+conda activate phylo
+```
+3. Phyutility linux package download
+``` bash
+sudo apt-get install phyutility
+```
+4. Trimmpmatic file download
+```bash
+wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+
+unzip Trimmomatic-0.39.zip
+```
+  
+
+
+
 - - -
 ## Quick start.
   1.[Quick start guideline for example raw data download](https://github.com/CSB-SeongminCheon/Algae_review_test/blob/main/Quick%20start%20guideline%20for%20example%20raw%20data%20download.md)  
