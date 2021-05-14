@@ -173,7 +173,7 @@ python2 prank_Wrapper.py SingleCopy
   
 I usually use 0.3 for minimal aling column.
 ```bash
-python2 phyutility_Wrapper.py <single copy results> <min_align_column>
+python2 phyutility_Wrapper.py SingleCopy <min_align_column>
 ```
 
 <br>  
@@ -184,7 +184,7 @@ You can choose minimal cleaned alignment length per orthologs and minimal number
 Concatenate with selected cleand orthologous for supermatrix.  
 
 ```bash
-python2 supermatrix_concatenate.py <single copy results> <min_align_length> <min_taxa> <output_name>
+python2 supermatrix_concatenate.py SingleCopy <min_align_length> <min_taxa> <output_name>
 ```
 
 <br>
