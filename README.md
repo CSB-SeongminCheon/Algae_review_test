@@ -123,7 +123,7 @@ makeblastdb -in uniprot_sprot.fasta -dbtype prot
   
 TransDecoder.LongOrfs -t <transcripts> -S
 blastp -query <transcripts>.transdecoder_dir/longest_orfs.pep -db uniprot_sprot.fasta -max_target_seqs 1 -outfmt 6 -evalue 10 -num_threads 32 -out Genus_Species.outfmt6
-TransDecoder.Predict -t <transcripts> --retain_blastp_hits Genus_Species.outfmt6 --cpu 32
+TransDecoder.Predict -t <transcripts> --retain_blastp_hits Genus_Species.outfmt6 --single_best_only
 ```
 <br>  
   
