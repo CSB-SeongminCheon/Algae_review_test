@@ -119,7 +119,7 @@ For blastp, download and make database file from [Uniprot/Swiss-Prot](https://ww
 ``` bash
 wget https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 gzip -d uniprot_sprot.fasta.gz
-makeblastdb -i uniprot_sprot.fasta -dbtype prot
+makeblastdb -in uniprot_sprot.fasta -dbtype prot
   
 TransDecoder.LongOrfs -t <transcripts> -S
 blastp -query <transcripts>.transdecoder_dir/longest_orfs.pep -db uniprot_sprot.fasta -max_target_seqs 1 -outfmt 6 -evalue 10 -num_threads 32 -out Genus_Species.outfmt6
