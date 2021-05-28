@@ -150,7 +150,7 @@ python2 fix_names_from_CDhit.py <CDhit output file.cdhit> <Genus name> <Species 
 
 Orthology inference, Copy all the Genus_Species.fix.fa files (or any proteom sequences) into a new directory such as <OrthoFinder_running_dir>.
 ```bash
-orthofinder -f <OrthoFinder_running_dir>
+orthofinder -f <OrthoFinder_running_dir> -S diamond -t <number of threads>
 ```
 <br>  
 
