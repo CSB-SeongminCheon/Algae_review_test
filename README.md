@@ -1,4 +1,4 @@
-# Algae review - phylotranscritpomic analysis pipeline
+# phylotranscritpomic analysis pipeline for phycologist
 
 Citation: Cheon, S., Zhang, J. and Park, C., 2020. Is phylotranscriptomics as reliable as phylogenomics?. Molecular biology and evolution, 37(12), pp.3672-3683.  
   
