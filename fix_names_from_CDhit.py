@@ -3,7 +3,7 @@ from Bio import SeqIO as seq
 
 if __name__ == "__main__":
 	if len(sys.argv) !=4:
-		print "usage: python fix_name_from_CDhit.py CDhit_result.fa.cdhit GenusName SpeciesName"
+		print("usage: python fix_name_from_CDhit.py CDhit_result.fa.cdhit GenusName SpeciesName")
 		sys.exit()
 
 	f = sys.argv[1]

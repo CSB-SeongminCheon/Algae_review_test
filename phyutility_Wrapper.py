@@ -10,7 +10,7 @@ def Phyutility(DIR, align_file, min_aln):
 	if os.path.exists(DIR + cleaned_file):
 		return cleaned_file
 	cmd = "phyutility -aa -clean " + str(min_aln) + " -in " +DIR + align_file +" -out " +DIR+align_file+".phy"
-	print cmd
+	print(cmd)
 	os.system(cmd)
 	assert os.path.exists(DIR+align_file+".phy"),"Running Error Phyutility,Plz confirm PATH of phyutility "
 	#Remove empty and short alignment sequences < 10 aa aln
@@ -34,7 +34,7 @@ def main(DIR,min_aln):
 
 if __name__ == "__main__":
 	if len(sys.argv) != 3:
-		print "python phyutility_Wrapper.py inDIR min_align_column"
+		print("python phyutility_Wrapper.py inDIR min_align_column")
 		sys.exit(0)
 	DIR=sys.argv[1]
 	min_aln = sys.argv[2]

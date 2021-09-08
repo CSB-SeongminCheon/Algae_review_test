@@ -3,7 +3,7 @@ from Bio import SeqIO as Seq
 
 if __name__ == "__main__":
 	if len(sys.argv) != 4:
-		print "usage: python singlecopy_from_OrthoFinder.py OrthoFinder_InputDIR Output_DIR Minimal_taxa"+'\n'+'\n'
+		print("usage: python singlecopy_from_OrthoFinder.py OrthoFinder_InputDIR Output_DIR Minimal_taxa"+'\n'+'\n')
 		sys.exit
 
 
@@ -24,19 +24,20 @@ if __name__ == "__main__":
 	s = glob.glob(inDIR+"OrthoFinder/Results_*/Orthogroup_Sequences")[0]
 
 	for line in f:
-	        line = line.rstrip('\n')
-		line = line.split()
-		taxon = []
-		for index in range(1, len(line)):
-			taxon.append(  str(line[index].split("@")[0]))
+                line = line.rstrip('\n')
+                line = line.split()
+                taxon = []
+                for index in range(1, len(line)):
+                    taxon.append(  str(line[index].split("@")[0]))
 
 
-		if len(taxon) == len(list(set(taxon))):
-			if len(taxon) >= int(sys.argv[3]):
-				result =  str(line[0].rstrip(":")) +".fa"
-				scopy = open(outDIR+"/"+result,"w")
-				for fa in Seq.parse(s+"/"+result ,"fasta"):
-					scopy.write(">"+str(str(fa.id).split("@")[0])+'\n'+str(fa.seq).rstrip("*")+'\n')
+                if len(taxon) == len(list(set(taxon))):
+                    if len(taxon) >= int(sys.argv[3]):
+                        result =  str(line[0].rstrip(":")) +".fa"
+                        scopy = open(outDIR+"/"+result,"w")
+                        for fa in Seq.parse(s+"/"+result ,"fasta"):
+                            scopy.write(">"+str(str(fa.id).split("@")[0])+'\n'+str(fa.seq).rstrip("*")+'\n')
 
-				scopy.close()
+                            scopy.close()
 				
+
