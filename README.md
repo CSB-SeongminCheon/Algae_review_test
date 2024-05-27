@@ -59,7 +59,7 @@ conda activate phylo
 ``` bash
 sudo apt-get install phyutility
 ```
-4. Trimmpmatic file download
+4. Trimmomatic file download
 ```bash
 wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
 
