@@ -1,7 +1,10 @@
 # phylotranscritpomic analysis pipeline for phycologist
 
-Citation: Cheon, S., Zhang, J. and Park, C., 2020. Is phylotranscriptomics as reliable as phylogenomics?. Molecular biology and evolution, 37(12), pp.3672-3683.  
-  
+Citation: [Cheon, S., Zhang, J. and Park, C., 2020. Is phylotranscriptomics as reliable as phylogenomics?. Molecular biology and evolution, 37(12), pp.3672-3683.](https://academic.oup.com/mbe/article/37/12/3672/5870839?login=false)
+
+
+Citation: [Cheon S. and Park C,2021, A guide to phylotranscriptomic analysis for phycologists. Algae, 36(4): 333-340.](https://www.e-algae.org/journal/view.php?number=2960)
+
 \##Notice: Consistent text formatting helps reders to interpret information. **\<text\>** means parameters for Linux shell and python scripts such as input file name or integer values.
 
 - - -
